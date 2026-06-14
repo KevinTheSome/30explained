@@ -181,7 +181,7 @@ function onBackdropClick(e: MouseEvent) {
       background: linear-gradient(
             135deg,
             var(--card-color) 0%,
-            rgba(255, 255, 255, 0.1) 100%
+            rgba(250, 250, 250, 0.1) 100%
       );
       transition:
             transform 0.4s ease,
