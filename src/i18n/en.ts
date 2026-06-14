@@ -1,18 +1,18 @@
 export default {
-      "app.title": "First 30 work days",
+      "app.title": "My First 30 Days on the Job",
 
-      "card.1.title": "Get to know the company, products, and team",
+      "card.1.title": "Getting to Know the Company, Products, and Team",
       "card.1.desc":
-            '- I would get to know the company and its products at the same time, because products say a lot about what the company does and where it focuses.\n- To get to know the team, I would start with the people I work closest with on the same project, and gradually meet everyone else.\n- I would stay open and listen if someone wants to get to know me. Talking about technologies and hobbies I care about helps others connect with me faster too.\n <img src="./assets/Frontendframework.webp" />',
-      "card.2.title": "Learn the needed technologies and processes",
+            '- I\'d get to know the company and its products in parallel — what a company builds says a lot about who they are and what they focus on.\n- To get to know the team, I\'d start with the people I work closest with on my project, then gradually branch out to meet everyone else.\n- I\'d keep an open mind and be a good listener when colleagues reach out. Sharing what technologies and hobbies I\'m passionate about helps others connect with me too.\n <img src="./assets/Frontendframework.webp" />',
+      "card.2.title": "Learning the Tech Stack and Processes",
       "card.2.desc":
-            '- I would start with the technology\'s website <img src="./assets/YIIHomepage.png" /> documentation and set up the local development environment. Then I would edit and experiment with examples to understand them. If stuck, I would ask someone with more knowledge or experience.\n- For specific processes, I would ask someone who has done them before trying myself.\n- The last thing I would want to do is delete or disable a production product.',
-      "card.3.title": "Make a practical contribution in the first month",
+            "- I\'d start by visiting the technology\'s website and docs <img src=\"./assets/YIIHomepage.png\" /> to set up my local dev environment. From there, I\'d tinker with examples and edit them until they click. If I get stuck, I\'d ask a more experienced teammate.\n- Before diving into an unfamiliar process, I\'d find someone who\'s done it before and learn from their experience first.\n- The last thing I\'d want to do is accidentally take down or break a production system.",
+      "card.3.title": "Making a Tangible Impact in Month One",
       "card.3.desc":
-            '- I would try to fix small bugs to learn the debugging process from start to finish.\n- If there are untested code fragments, I would write tests for them.\n- I would improve or fix documentation that felt unclear during these 30 days.\n- If needed, I would suggest improvements for solving problems or data structures.\n<img src="./assets/ERdiagramma.png"/> The image shows an ER diagram for a personal project.',
-      "card.4.title": "Plan a long-term contribution to the company",
+            "- I\'d start by squashing small bugs — a great way to learn the full debugging lifecycle end to end.\n- If I find untested code, I\'d write tests for it.\n- I\'d clean up any documentation that felt confusing or incomplete during my first 30 days.\n- Where I spot opportunities, I\'d propose improvements to problem-solving approaches or data structures.\n<img src=\"./assets/ERdiagramma.png\"/> Here\'s an ER diagram from a personal project of mine.",
+      "card.4.title": "Delivering Long-Term Value to the Company",
       "card.4.desc":
-            '- I would try to find problem areas in software, code, performance, documentation, and other places where I have knowledge to contribute.\n- Use my knowledge to improve those areas.\n- It is hard to say what else I could do since I am not as experienced as other programmers, but I would grow with time and eventually be able to help more.\n <img src="./assets/TimeSkillCurve.png" />',
+            "- I\'d actively look for pain points — in code quality, performance, documentation, or anywhere my skills can make a difference — and use my knowledge to improve them.\n- It\'s hard to predict everything I could contribute down the line. I don\'t have decades of experience, but I learn fast. Over time I\'ll grow into someone who can take on bigger challenges and help the team more and more.\n <img src=\"./assets/TimeSkillCurve.png\" />",
       "lang.toggle": "LV",
       "zoom.close": "Close",
 } as const;
