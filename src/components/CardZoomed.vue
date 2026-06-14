@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ref, watch, onMounted, nextTick } from "vue";
+import { ref, computed, watch, onMounted, nextTick } from "vue";
 import type { Card } from "../types";
 import { useI18n } from "../composables/useI18n";
-
 const props = defineProps<{
       card: Card;
       sourceRect: DOMRect | null;
@@ -18,6 +17,11 @@ const { t } = useI18n();
 const overlay = ref<HTMLElement | null>(null);
 const content = ref<HTMLElement | null>(null);
 const animating = ref(false);
+
+const assetModules = import.meta.glob<{ default: string }>("../assets/*", {
+      eager: true,
+      query: "?url",
+});
 
 onMounted(async () => {
       if (props.visible && props.sourceRect) {
@@ -100,6 +104,20 @@ function animateOut() {
       el.style.opacity = "0";
 }
 
+const processedDesc = computed(() => {
+      const raw = t(`card.${props.card.id}.desc`);
+      if (!raw) return "";
+      let html = raw.replace(/(?:\\n|\n|\/n)/g, "<br>");
+      html = html.replace(
+            /src="\.\/assets\/([^"]+)"/g,
+            (_, filename: string) => {
+                  const mod = assetModules[`../assets/${filename}`];
+                  return `src="${mod?.default || filename}"`;
+            },
+      );
+      return html;
+});
+
 function onBackdropClick(e: MouseEvent) {
       if (e.target === overlay.value) {
             handleClose();
@@ -128,9 +146,7 @@ function onBackdropClick(e: MouseEvent) {
                         <h2 class="content-title">
                               {{ t(`card.${card.id}.title`) }}
                         </h2>
-                        <p class="content-desc">
-                              {{ t(`card.${card.id}.desc`) }}
-                        </p>
+                        <div class="content-desc" v-html="processedDesc"></div>
                   </div>
             </div>
       </Teleport>
@@ -159,9 +175,9 @@ function onBackdropClick(e: MouseEvent) {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       gap: 1.5rem;
-      padding: 3rem;
+      padding: 6rem 3rem 3rem;
+      overflow: hidden;
       background: linear-gradient(
             135deg,
             var(--card-color) 0%,
@@ -207,11 +223,27 @@ function onBackdropClick(e: MouseEvent) {
 }
 
 .content-desc {
-      margin: 0;
+      flex: 1;
+      width: 100%;
       max-width: 600px;
+      margin: 0;
+      padding-right: 0.5rem;
+      overflow-y: auto;
       font-size: 1.2rem;
       line-height: 1.6;
       color: var(--highlight-color);
-      text-align: center;
+      text-align: left;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+</style>
+
+<style>
+.content-desc img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      display: block;
+      margin: 1rem auto;
 }
 </style>

@@ -2,7 +2,8 @@ export default {
       "app.title": "First 30 work days",
 
       "card.1.title": "Get to know the company, products, and team",
-      "card.1.desc": "text /n text /n and more text then usuall",
+      "card.1.desc":
+            'test\n\ntest.\n\ntest \n\ntest\n\n<img src="./assets/test.drawio.png" />\n\ntest\n\ntest\n\ntest',
       "card.2.title": "How to learn the needed technologies and procesus",
       "card.2.desc": "",
       "card.3.title":
