@@ -244,10 +244,13 @@ function onBackdropClick(e: MouseEvent) {
       }
 
       .close-btn {
-            top: 0.75rem;
-            right: 0.75rem;
-            padding: 0.35rem 0.75rem;
-            font-size: 0.85rem;
+            top: auto;
+            right: auto;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
       }
 
       .content-icon {
