@@ -236,6 +236,33 @@ function onBackdropClick(e: MouseEvent) {
       scrollbar-width: thin;
       scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
+
+@media (max-width: 480px) {
+      .content {
+            padding: 4rem 1.25rem 1.25rem;
+            gap: 1rem;
+      }
+
+      .close-btn {
+            top: 0.75rem;
+            right: 0.75rem;
+            padding: 0.35rem 0.75rem;
+            font-size: 0.85rem;
+      }
+
+      .content-icon {
+            font-size: 3rem;
+      }
+
+      .content-title {
+            font-size: 1.5rem;
+      }
+
+      .content-desc {
+            font-size: 0.95rem;
+            padding-right: 0.25rem;
+      }
+}
 </style>
 
 <style>
